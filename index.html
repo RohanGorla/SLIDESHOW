@@ -15,13 +15,7 @@
         html{
             background-color: bisque;
         }
-
-        .container{
-            /* display: flex; */
-            /* justify-content: center; */
-            /* align-items: center; */
-        }
-
+        
         .image{
             /* background-color: brown; */
             position: relative;
@@ -55,7 +49,6 @@
             top: 70vh;
             width: 100vw;
             height: 10vh;
-            /* background-color: aquamarine; */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -64,7 +57,6 @@
         .number_box{
             width: 20vw;
             height: 8vh;
-            /* background-color: blueviolet; */
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -148,9 +140,7 @@
         function buttons (l){
             switch (l) {
                 case 'prev':
-                    // alert('p')
                     let lis = document.getElementsByTagName("img");
-                    // console.log(lis);
                     for(let j = 0; j < lis.length; j++) {
                         if (lis[j].classList.length == 1) {
                             var li = lis[j].classList[0];
@@ -160,25 +150,21 @@
 
                     switch (li) {
                         case "i1":
-                            // alert("i1");
                             document.getElementsByClassName("i1")[0].classList.add("dispn");
                             document.getElementsByClassName("i4")[0].classList.remove("dispn");
                             break;
                     
                         case "i2":
-                            // alert("i2");
                             document.getElementsByClassName("i2")[0].classList.add("dispn");
                             document.getElementsByClassName("i1")[0].classList.remove("dispn");
                             break;
 
                         case "i3":
-                            // alert("i3");
                             document.getElementsByClassName("i3")[0].classList.add("dispn");
                             document.getElementsByClassName("i2")[0].classList.remove("dispn");
                             break;
 
                         case "i4":
-                            // alert("i4");
                             document.getElementsByClassName("i4")[0].classList.add("dispn");
                             document.getElementsByClassName("i3")[0].classList.remove("dispn");
                             break;
@@ -186,9 +172,7 @@
                     break;
             
                 case 'next':
-                    // alert('p')
                     let lis_2 = document.getElementsByTagName("img");
-                    // console.log(lis_2);
                     for(let j = 0; j < lis_2.length; j++) {
                         if (lis_2[j].classList.length == 1) {
                             var li = lis_2[j].classList[0];
@@ -198,25 +182,21 @@
 
                     switch (li) {
                         case "i1":
-                            // alert("i1");
                             document.getElementsByClassName("i1")[0].classList.add("dispn");
                             document.getElementsByClassName("i2")[0].classList.remove("dispn");
                             break;
                     
                         case "i2":
-                            // alert("i2");
                             document.getElementsByClassName("i2")[0].classList.add("dispn");
                             document.getElementsByClassName("i3")[0].classList.remove("dispn");
                             break;
 
                         case "i3":
-                            // alert("i3");
                             document.getElementsByClassName("i3")[0].classList.add("dispn");
                             document.getElementsByClassName("i4")[0].classList.remove("dispn");
                             break;
 
                         case "i4":
-                            // alert("i4");
                             document.getElementsByClassName("i4")[0].classList.add("dispn");
                             document.getElementsByClassName("i1")[0].classList.remove("dispn");
                             break;
@@ -257,11 +237,6 @@
                         document.getElementsByClassName("i4")[0].classList.remove("dispn");
                         break;
                 }
-                // console.log(document.getElementsByClassName("i1")[0].classList);
-                // console.log(document.getElementsByClassName("i2")[0].classList);
-                // console.log(document.getElementsByClassName("i3")[0].classList);
-                // console.log(document.getElementsByClassName("i4")[0].classList);
-                
             });
         }
     </script>
