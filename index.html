@@ -106,19 +106,23 @@
             background-color: blueviolet;
         }
         
+        .dispn{
+            display: none;
+        }
+
     </style>
 </head>
 <body>
     <div class="container">
         <div class="image">
-            <div class="prev">Prev</div>
+            <div class="prev" onclick="buttons('prev')">Prev</div>
             <div class="images">
                 <img src="./photos/IMG_7171.JPG" class="i1">
                 <img src="./photos/IMG_7286.JPG" class="i2 dispn">
                 <img src="./photos/IMG_7321.JPG" class="i3 dispn">
                 <img src="./photos/IMG_7559.JPG" class="i4 dispn">
             </div>
-            <div class="next">Next</div>
+            <div class="next" onclick="buttons('next')">Next</div>
         </div>
 
         <div class="number">
@@ -130,5 +134,128 @@
             </div>
         </div>
     </div>
+
+    <script>
+        console.log("hi");
+        function buttons (l){
+            switch (l) {
+                case 'prev':
+                    // alert('p')
+                    let lis = document.getElementsByTagName("img");
+                    // console.log(lis);
+                    for(let j = 0; j < lis.length; j++) {
+                        if (lis[j].classList.length == 1) {
+                            var li = lis[j].classList[0];
+                            break;
+                        }
+                    }
+
+                    switch (li) {
+                        case "i1":
+                            // alert("i1");
+                            document.getElementsByClassName("i1")[0].classList.add("dispn");
+                            document.getElementsByClassName("i4")[0].classList.remove("dispn");
+                            break;
+                    
+                        case "i2":
+                            // alert("i2");
+                            document.getElementsByClassName("i2")[0].classList.add("dispn");
+                            document.getElementsByClassName("i1")[0].classList.remove("dispn");
+                            break;
+
+                        case "i3":
+                            // alert("i3");
+                            document.getElementsByClassName("i3")[0].classList.add("dispn");
+                            document.getElementsByClassName("i2")[0].classList.remove("dispn");
+                            break;
+
+                        case "i4":
+                            // alert("i4");
+                            document.getElementsByClassName("i4")[0].classList.add("dispn");
+                            document.getElementsByClassName("i3")[0].classList.remove("dispn");
+                            break;
+                    }
+                    break;
+            
+                case 'next':
+                    // alert('p')
+                    let lis_2 = document.getElementsByTagName("img");
+                    // console.log(lis_2);
+                    for(let j = 0; j < lis_2.length; j++) {
+                        if (lis_2[j].classList.length == 1) {
+                            var li = lis_2[j].classList[0];
+                            break;
+                        }
+                    }
+
+                    switch (li) {
+                        case "i1":
+                            // alert("i1");
+                            document.getElementsByClassName("i1")[0].classList.add("dispn");
+                            document.getElementsByClassName("i2")[0].classList.remove("dispn");
+                            break;
+                    
+                        case "i2":
+                            // alert("i2");
+                            document.getElementsByClassName("i2")[0].classList.add("dispn");
+                            document.getElementsByClassName("i3")[0].classList.remove("dispn");
+                            break;
+
+                        case "i3":
+                            // alert("i3");
+                            document.getElementsByClassName("i3")[0].classList.add("dispn");
+                            document.getElementsByClassName("i4")[0].classList.remove("dispn");
+                            break;
+
+                        case "i4":
+                            // alert("i4");
+                            document.getElementsByClassName("i4")[0].classList.add("dispn");
+                            document.getElementsByClassName("i1")[0].classList.remove("dispn");
+                            break;
+                    }
+                    break;
+            }
+        }
+        let ele = document.getElementsByClassName("num");
+        for (let i = 0; i < ele.length; i++) {
+            ele[i].addEventListener("click", function(){
+                let iH = ele[i].innerHTML;
+                switch (iH) {
+                    case "1":
+                        document.getElementsByClassName("i2")[0].classList.add("dispn");
+                        document.getElementsByClassName("i3")[0].classList.add("dispn");
+                        document.getElementsByClassName("i4")[0].classList.add("dispn");
+                        document.getElementsByClassName("i1")[0].classList.remove("dispn");
+                        break;
+
+                    case "2":
+                        document.getElementsByClassName("i1")[0].classList.add("dispn");
+                        document.getElementsByClassName("i3")[0].classList.add("dispn");
+                        document.getElementsByClassName("i4")[0].classList.add("dispn");
+                        document.getElementsByClassName("i2")[0].classList.remove("dispn");
+                        break;
+
+                    case "3":
+                        document.getElementsByClassName("i2")[0].classList.add("dispn");
+                        document.getElementsByClassName("i1")[0].classList.add("dispn");
+                        document.getElementsByClassName("i4")[0].classList.add("dispn");
+                        document.getElementsByClassName("i3")[0].classList.remove("dispn");
+                        break;
+
+                    case "4":
+                        document.getElementsByClassName("i2")[0].classList.add("dispn");
+                        document.getElementsByClassName("i3")[0].classList.add("dispn");
+                        document.getElementsByClassName("i1")[0].classList.add("dispn");
+                        document.getElementsByClassName("i4")[0].classList.remove("dispn");
+                        break;
+                }
+                // console.log(document.getElementsByClassName("i1")[0].classList);
+                // console.log(document.getElementsByClassName("i2")[0].classList);
+                // console.log(document.getElementsByClassName("i3")[0].classList);
+                // console.log(document.getElementsByClassName("i4")[0].classList);
+                
+            });
+        }
+    </script>
 </body>
 </html>
